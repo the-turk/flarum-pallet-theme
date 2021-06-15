@@ -21,7 +21,7 @@ _This extension is under **minimal maintenance** (or maybe no maintenance at all
 ## Installation
 
 ```bash
-composer require the-turk/flarum-pallet-theme
+composer require "the-turk/flarum-pallet-theme:0.1.0-beta.1"
 ```
 
 ## Updating
