@@ -1,0 +1,13 @@
+@media @desktop-up {
+	.Composer {
+		&.active:not(.fullScreen) {
+			& when (@config-dark-mode = false) {
+				.box-shadow(~"0 0 0 1px #dedede, 0 2px 6px @{shadow-color}");
+			}
+
+			& when (@config-dark-mode = true) {
+				.box-shadow(~"0 0 0 1px #2a3346, 0 2px 6px @{shadow-color}");
+			}
+		}
+	}
+}

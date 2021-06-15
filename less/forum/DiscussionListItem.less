@@ -1,0 +1,75 @@
+.DiscussionListItem {
+	border-radius: 0;
+	padding-top: 10px;
+    padding-bottom: 10px;
+
+    .item-terminalPost {
+        font-size: 12px;
+
+        & when (@config-dark-mode = true) {
+            color: #a2a5b9;
+        }
+    
+        .username {
+            color: #393a4f;
+
+            & when (@config-dark-mode = true) {
+                color: white;
+            }
+        }
+    }
+
+    &:hover {
+        & when (@config-dark-mode = true) {
+            background: #1C2330;
+        }
+    }
+}
+
+.DiscussionListItem-title {
+	font-size: 14px;
+    font-weight: 600;
+    color: #393a4f;
+
+    & when (@config-dark-mode = true) {
+        color: #f5f5f5;
+    }
+
+    .DiscussionList:not(.DiscussionList--searchResults) .read & {
+        color: #646464;
+
+        & when (@config-dark-mode = true) {
+            color: #a2a5b9;
+        }
+    }
+}
+
+.DiscussionListItem-info {
+	color: #999;
+
+    .item-excerpt div {
+        font-size: 13px;
+        font-weight: 400;
+        font-size: .85rem;
+
+        & when (@config-dark-mode = true) {
+            color: #a2a5b9;
+        }
+    }
+}
+
+.stickyDiscussion {
+	background: #fef7ec;
+
+    & when (@config-dark-mode = true) {
+        background: #2c384b;
+    }
+
+    &:hover {
+        background: #fef5e6;
+
+        & when (@config-dark-mode = true) {
+            background: #252f3f;
+        }        
+    }
+}

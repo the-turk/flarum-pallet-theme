@@ -1,0 +1,53 @@
+.EventPost-icon {
+    color: #cecece !important;
+}
+
+.PostUser {
+    & h3, & h3 a {
+        color: #393a4f;
+
+        & when (@config-dark-mode = true) {
+            color: white;
+        }
+    }
+}
+
+.Post-body {
+	font-size: .95rem;
+	font-weight: 400;
+	color: #222;
+	line-height: 32px;
+
+    & when (@config-dark-mode = true) {
+		color: #a2a5b9;
+	}
+
+    blockquote {
+        color: #767676;
+        background: #f7f7f7;
+
+        & when (@config-dark-mode = true) {
+            color: #6c7d93;
+            background: #232c3c;
+            border-color: #2a3346;
+
+            & .PostMention, & .UserMention {
+                background: #1C2330;
+            }
+        }
+    }
+}
+
+.PostMeta-number {
+    font-weight: 600;
+}
+
+div[data-fof-upload-download-uuid] {
+	font-size: .85em;
+}
+
+.ReplyPlaceholder:hover {
+    & when (@config-dark-mode = true) {
+		border-color: #2a3346;
+	}
+}

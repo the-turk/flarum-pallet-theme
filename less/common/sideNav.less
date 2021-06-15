@@ -1,0 +1,36 @@
+@media @desktop-up {
+  .sideNavContainer {
+    flex-direction: row-reverse;
+  }
+
+  .sideNav {
+    margin-right: 0px;
+    margin-left: 50px;
+
+    &.TagsPage-nav {
+      margin-left: 0;
+    }
+
+    .item-allDiscussions, .item-following, .item-tags {
+      display: none;
+    }
+
+    .Dropdown--select .Dropdown-menu  {
+      & > li.active > a {
+        font-weight: 600;
+      }
+
+      & > .Dropdown-separator {
+        display: none;
+      }
+    }    
+  }
+
+  .sideNav--hidden {
+    display: none;
+  }
+  
+  .sideNavOffset {
+    margin-left: 0px;
+  }
+}

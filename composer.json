@@ -1,0 +1,45 @@
+{
+  "name": "the-turk/flarum-pallet-theme",
+  "description": "Pallet theme for your forum.",
+  "keywords": [
+    "flarum",
+    "theme",
+    "pallet"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "authors": [{
+    "name": "Hasan Özbey",
+    "email": "hasanoozbey@gmail.com",
+    "homepage": "https://github.com/the-turk"
+  }],
+  "support": {
+    "issues": "https://github.com/the-turk/flarum-pallet-theme/issues",
+    "source": "https://github.com/the-turk/flarum-pallet-theme"
+  },
+  "require": {
+    "flarum/core": "^1.0.2",
+    "flarum/tags": "^1.0.3"
+  },
+  "suggest": {
+    "ianm/synopsis": "Give more volume to the discussion list."
+  },
+  "conflict": {
+    "fof/nightmode": ">=0.1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "TheTurk\\Pallet\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "Pallet Theme",
+      "icon": {
+        "name": "fas fa-pallet",
+        "backgroundColor": "#b72a2a",
+        "color": "#fff"
+      }
+    }
+  }
+}

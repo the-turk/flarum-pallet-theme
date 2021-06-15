@@ -1,0 +1,18 @@
+.IndexPage {
+    .sideNav {
+        @media @desktop-up {
+            margin-left: 65px;
+        }
+    
+        a.hasIcon > i {
+            opacity: 70%;
+        }
+    }
+    @media @desktop-up {
+        .IndexPage-nav {
+            & .item-newDiscussion, & .item-subscription {
+                display: none;
+            }
+        }
+    }
+}

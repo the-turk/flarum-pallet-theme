@@ -1,0 +1,170 @@
+.TagLabel {
+	font-weight: 500 !important;
+
+	&.colored .TagLabel-text {
+		& when (@config-dark-mode = true) {
+			color: #212938 !important;
+		}
+	}
+}
+
+// ------------------------------------
+// Tags Page
+
+@media @desktop-up {
+	.TagsPage-nav {
+		display: none;
+	}
+}
+
+.TagFlex {
+	margin-top: 30px;
+	display: flex;
+  	flex-wrap: wrap;
+	align-items: center;
+
+	@media (max-width: @screen-tablet-max) {
+		justify-content: center;
+	}
+	
+
+	& > div {
+		padding-left: 5px;
+		padding-right: 20px;
+		background-color: #fafafa;
+		margin: 10px;
+		box-shadow: 0 0 5px 0 rgba(46,53,57,0.11);
+
+		& when (@config-dark-mode = true) {
+			background-color: #1C2330;
+			box-shadow: 0 0 5px 0 @shadow-color;
+		}
+	}
+}
+
+.TagItem {
+	display: flex;
+	align-items: center;
+	width: 515px;
+	height: 180px;
+	position: relative;
+
+	@media @tablet {
+		width: 700px;
+	}
+
+	@media @phone {
+		width: 320px;
+	}
+
+	a {
+		color: #111;
+
+		& when (@config-dark-mode = true) {
+			color: #a2a5b9;
+		}
+	}
+
+	a:hover {
+		color: #527b99;
+		text-decoration: none;
+
+		& when (@config-dark-mode = true) {
+			color: #fafafa;
+		}
+	}
+
+	time {
+		font-weight: 500;
+		font-size: 12px;
+	}
+
+	.TagItem-borderLine {
+		position: absolute;
+		top: 10px;
+		bottom: 10px;
+		left: 10px;
+		border-width: 2px;
+		border-style: solid;
+		-webkit-background-clip: padding-box;
+		background-clip: padding-box;
+	}
+}
+
+.TagItem-col {
+	padding-left: 30px;
+	padding-top: 10px;
+}
+
+.TagItem-infoContainer {
+	display: flex;
+	align-items: center;
+	height: 110px;
+	width: 460px;
+
+	@media @tablet {
+		width: 640px;
+	}
+
+	@media @phone {
+		width: 280px;
+	}
+
+	.TagItem-icon {
+		margin-right: 25px;
+		color: #cecece;
+	}
+	
+	.TagItem-info {
+		max-height: 110px;
+		overflow-y: auto;
+	}
+	
+	.TagItem-title {
+		font-weight: 500;
+		font-size: 1.15em;
+	}
+	
+	.TagItem-desc {
+		line-height: 1.8em;
+		margin-top: 5px;
+
+		& when (@config-dark-mode = true) {
+			color: #a2a5b9;
+		}
+	}
+	
+	.TagItem-children {
+		font-weight: 500;
+		font-size: 12px;
+	
+		a {
+			margin-right: 10px;
+		}
+	}
+}
+
+.TagItem-detailContainer {
+	.TagItem-lastPostedDiscussion {
+		margin-top: 5px;
+		margin-bottom: 5px;
+		border-top: 1px solid #dedede;
+		height: 50px;
+		display: flex;
+		align-items: center;
+
+		& when (@config-dark-mode = true) {
+			border-color: #2A3346;
+		}
+	}
+	
+	.TagItem-lastPostedDiscussion-link {
+		display: block;
+		margin-right: 10px;
+	}
+}
+
+.TagCloud {
+	line-height: 2 !important;
+	font-size: 14px !important;
+}
