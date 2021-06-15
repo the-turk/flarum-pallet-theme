@@ -24,13 +24,6 @@ _This extension is under **minimal maintenance** (or maybe no maintenance at all
 composer require "the-turk/flarum-pallet-theme:0.1.0-beta.1"
 ```
 
-## Updating
-
-```bash
-composer update the-turk/flarum-pallet-theme
-php flarum cache:clear
-```
-
 ## Recommendations
 
 It's best to use this theme with the following extensions:
