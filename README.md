@@ -14,7 +14,7 @@ Introducing experimental tags navigation...
 
 When you head into a tag's discussion list, only that tag's children and secondary tags will be shown in the **affixed** sidebar. Main purpose of this idea is to create a tag-focused user experience.
 
-It's can be used with dark & light modes but sadly, it doesn't work with the [Night Mode by FriendsOfFlarum](https://discuss.flarum.org/d/21492-friendsofflarum-night-mode) at the moment.
+It can be used with dark & light modes but sadly, it doesn't work with the [Night Mode by FriendsOfFlarum](https://discuss.flarum.org/d/21492-friendsofflarum-night-mode) at the moment.
 
 _This extension is under **minimal maintenance** (or maybe no maintenance at all ??)._
 
