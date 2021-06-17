@@ -191,6 +191,36 @@ export default class Sidebar extends Component {
       20
     );
 
+    // ext: clarkwinkelmann/flarum-ext-group-list
+    if (app.forum.attribute('clarkwinkelmann-group-list.showSideNavLink')) {
+      items.add(
+        'clarkwinkelmann-group-list-item',
+        LinkButton.component(
+          {
+            href: app.route('clarkwinkelmann-group-list'),
+            icon: 'fas fa-users',
+          },
+          app.translator.trans('clarkwinkelmann-group-list.forum.nav')
+        ),
+        21
+      );
+    }
+
+    // ext: fof/user-directory
+    if (app.forum.attribute('canSeeUserDirectoryLink')) {
+      items.add(
+        'fof-user-directory',
+        LinkButton.component(
+          {
+            href: app.route('fof_user_directory'),
+            icon: 'far fa-address-book',
+          },
+          app.translator.trans('fof-user-directory.forum.page.nav')
+        ),
+        22
+      );
+    }
+
     if (user) {
       items.add(
         'following',

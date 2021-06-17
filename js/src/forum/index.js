@@ -129,6 +129,13 @@ app.initializers.add('the-turk-pallet-theme', () => {
     const tags = app.store.all('tags');
     const currentTag = this.currentTag();
 
+    sortTags(tags)
+      .forEach((tag) => {
+        items.remove('tag' + tag.id());
+      });
+
+    items.remove('moreTags');
+
     if (!currentTag) return;
 
     const addTag = (tag) => {
@@ -139,12 +146,6 @@ app.initializers.add('the-turk-pallet-theme', () => {
       items.remove('tag' + tag.id());
       items.add('navTag' + tag.id(), TagLinkButton.component({ model: tag, params, active }, tag?.name()), -14);
     };
-
-    sortTags(tags)
-      .filter((tag) => tag.position() !== null && (!tag.isChild() || tag.parent() === currentTag || tag.parent() === currentTag.parent()))
-      .forEach((tag) => {
-        items.remove('tag' + tag.id());
-      });
 
     sortTags(tags)
       .filter(
@@ -159,8 +160,6 @@ app.initializers.add('the-turk-pallet-theme', () => {
     const more = tags.filter((tag) => tag.position() === null).sort((a, b) => b.discussionCount() - a.discussionCount());
 
     more.forEach(addTag);
-
-    if (more.length) items.remove('moreTags');
   });
 
   override(IndexPage.prototype, 'view', function () {

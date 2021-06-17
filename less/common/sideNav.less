@@ -11,7 +11,11 @@
       margin-left: 0;
     }
 
-    .item-allDiscussions, .item-following, .item-tags {
+    .item-allDiscussions, 
+    .item-following, 
+    .item-tags,
+    .item-fof-user-directory,
+    .item-clarkwinkelmann-group-list-item {
       display: none;
     }
 
@@ -23,7 +27,12 @@
       & > .Dropdown-separator {
         display: none;
       }
-    }    
+    }  
+    
+    .User--directory &,
+    .GroupList-page & {
+      display: none;
+    }
   }
 
   .sideNav--hidden {
