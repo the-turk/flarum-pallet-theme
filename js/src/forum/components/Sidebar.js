@@ -183,6 +183,17 @@ export default class Sidebar extends Component {
       40
     );
 
+    // ext: v17development/flarum-blog
+    if (app.forum.attribute('blogAddSidebarNav') && app.forum.attribute('blogAddSidebarNav') !== '0') {
+      items.add(
+        'blog',
+        <LinkButton icon="fas fa-comment" href={app.route('blog')}>
+          {app.translator.trans('v17development-flarum-blog.forum.blog')}
+        </LinkButton>,
+        39
+      );
+    }
+
     items.add(
       'tags',
       <LinkButton icon="fas fa-th-large" href={app.route('tags')}>
@@ -190,6 +201,17 @@ export default class Sidebar extends Component {
       </LinkButton>,
       20
     );
+
+    // ext: fof/byobu
+    if (app.initializers.has('askvortsov/flarum-categories')) {
+      items.add(
+        'categories',
+        <LinkButton icon="fas fa-th-list" href={app.route('categories')}>
+          {app.translator.trans('askvortsov-categories.forum.index.categories_link')}
+        </LinkButton>,
+        21
+      );
+    }
 
     // ext: clarkwinkelmann/flarum-ext-group-list
     if (app.forum.attribute('clarkwinkelmann-group-list.showSideNavLink')) {
@@ -202,7 +224,7 @@ export default class Sidebar extends Component {
           },
           app.translator.trans('clarkwinkelmann-group-list.forum.nav')
         ),
-        21
+        22
       );
     }
 
@@ -217,11 +239,26 @@ export default class Sidebar extends Component {
           },
           app.translator.trans('fof-user-directory.forum.page.nav')
         ),
-        22
+        23
       );
     }
 
     if (user) {
+      // ext: fof/byobu
+      if (app.initializers.has('fof-byobu')) {
+        items.add(
+          'privateDiscussions',
+          LinkButton.component(
+            {
+              icon: app.forum.data.attributes['byobu.icon-badge'],
+              href: app.route('byobuPrivate'),
+            },
+            app.translator.trans('fof-byobu.forum.nav.nav_item')
+          ),
+          29
+        );
+      }
+
       items.add(
         'following',
         LinkButton.component(

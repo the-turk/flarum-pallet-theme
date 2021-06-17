@@ -129,12 +129,11 @@ app.initializers.add('the-turk-pallet-theme', () => {
     const tags = app.store.all('tags');
     const currentTag = this.currentTag();
 
-    sortTags(tags)
-      .forEach((tag) => {
-        items.remove('tag' + tag.id());
-      });
+    sortTags(tags).forEach((tag) => {
+      items.remove('tag' + tag.id());
+    });
 
-    items.remove('moreTags');
+    if (items.has('moreTags')) items.remove('moreTags');
 
     if (!currentTag) return;
 
