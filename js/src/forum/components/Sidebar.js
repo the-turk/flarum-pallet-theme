@@ -202,6 +202,17 @@ export default class Sidebar extends Component {
       20
     );
 
+    // ext: justoverclock/flarum-ext-keywords
+    if (app.initializers.has('justoverclock/flarum-ext-keywords')) {
+      items.add(
+        'Glossary',
+        <LinkButton href={app.route('GlossaryPage')} icon="fas fa-atlas">
+          {app.translator.trans('flarum-ext-keywords.forum.title')}
+        </LinkButton>,
+        21
+      );
+    }
+
     // ext: fof/byobu
     if (app.initializers.has('askvortsov/flarum-categories')) {
       items.add(
@@ -209,7 +220,7 @@ export default class Sidebar extends Component {
         <LinkButton icon="fas fa-th-list" href={app.route('categories')}>
           {app.translator.trans('askvortsov-categories.forum.index.categories_link')}
         </LinkButton>,
-        21
+        22
       );
     }
 
@@ -224,7 +235,7 @@ export default class Sidebar extends Component {
           },
           app.translator.trans('clarkwinkelmann-group-list.forum.nav')
         ),
-        22
+        23
       );
     }
 
@@ -239,7 +250,7 @@ export default class Sidebar extends Component {
           },
           app.translator.trans('fof-user-directory.forum.page.nav')
         ),
-        23
+        24
       );
     }
 
@@ -272,6 +283,17 @@ export default class Sidebar extends Component {
       );
 
       items.add('separator', Separator.component(), 10);
+    }
+
+    // ext: justoverclock/flarum-ext-contactme
+    if (app.initializers.has('justoverclock/flarum-ext-contactme')) {
+      items.add(
+        'contactPage',
+        <LinkButton href={app.route('contactPage')} icon="fas fa-at">
+          {app.translator.trans('flarum-ext-contactme.forum.title')}
+        </LinkButton>,
+        8
+      );
     }
 
     return items;
